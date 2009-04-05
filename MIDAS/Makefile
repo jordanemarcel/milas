@@ -9,7 +9,7 @@ src = src/
 headers = includes/
 
 ### Objects used in this Makefile
-default_objects = $(src)$(program).o
+default_objects = $(src)$(program).o $(src)http_server.o
 
 
 all: $(program)
