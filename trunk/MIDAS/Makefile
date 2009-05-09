@@ -9,14 +9,19 @@ src = src/
 headers = includes/
 
 ### Objects used in this Makefile
-default_objects = $(src)$(program).o $(src)http_server.o
+default_objects_midas = $(src)midas.o $(src)tcp_server.o $(src)MIDAS_http_server.o $(src)daemon.o $(src)dictionary.o $(src)log.o $(src)midnet.o $(src)midas_utils.o $(src)tcp.o
+default_objects_list = $(src)list.o $(src)tcp.o $(src)tcp_client.o $(src)log.o
 
+all: clean $(program) list
 
-all: $(program)
-
-$(program): $(default_objects)
+$(program): $(default_objects_midas)
 	@echo Compilating...
-	gcc $(CFLAGS) $(src)*.o -o $(bin)$(program)
+	gcc $(CFLAGS) $(default_objects_midas) -o $(bin)$(program)
+	@echo Compilation successful!
+	
+list: $(default_objects_list)
+	@echo Compilating...
+	gcc $(CFLAGS) $(default_objects_list) -o $(bin)list
 	@echo Compilation successful!
 
 clean: 
