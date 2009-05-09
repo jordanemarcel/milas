@@ -1,0 +1,17 @@
+#ifndef MIDAS_UTILS_H_
+#define MIDAS_UTILS_H_
+
+#define RECEPTION_LENGTH 2048
+#define STD_BUFFER 1024
+#define WORD_MAX_LENGTH 100
+
+#define INTER_COMMUNICATION_DELAY_SEC 1
+#define INTER_COMMUNICATION_DELAY_USEC 0
+#define FLUSH_STDIN_DELAY_SEC 0
+#define FLUSH_STDIN_DELAY_USEC 1000
+
+enum _command {LIST, GET, PUT};
+
+int clear_fd(int fd);
+
+#endif /* MIDAS_UTILS_H_ */
