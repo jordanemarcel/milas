@@ -1,0 +1,1 @@
+A program written in C that shows how to create a list of word and modify it by several way, using local or remote sockets.
